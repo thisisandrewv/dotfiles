@@ -7,6 +7,8 @@ fi
 echo 'Wake up, Andrew...'
 
 # <<< Variables >>>
+export ZSH="$HOME/.oh-my-zsh" #Path to ZSH install
+export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # <<< ZSH Custom Options >>>
 
@@ -24,7 +26,7 @@ alias fixclipboard="defaults delete ~/Library/Preferences/com.apple.coreservices
 # <<< Prompts >>>
 
 # <<< $PATH Locations >>>
-export ZSH="$HOME/.oh-my-zsh" #Path to ZSH install
+
 
 # <<< Other >>>
 # ZSH config stuff
