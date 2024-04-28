@@ -3,7 +3,8 @@
       relink: true
 
 - link:
-    ~/.zshrc: zshrc
+    ~/.zshrc:
+    ~/.gitconfig:
 
 - create:
     - ~/Downloads/Arc

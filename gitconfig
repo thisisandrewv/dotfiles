@@ -1,0 +1,6 @@
+[user]
+	name = Andrew Vargas
+	email = 79120637+thisisandrewv@users.noreply.github.com
+[core]
+	editor = nano
+	excludesfile = /Users/thisisandrew/.gitignore_global
