@@ -2,6 +2,9 @@
     link:
       relink: true
 
+- link:
+    ~/.zshrc: zshrc
+
 - create:
     - ~/Downloads/Arc
     - ~/Downloads/Jdownloader
