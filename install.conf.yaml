@@ -1,0 +1,11 @@
+- defaults:
+    link:
+      relink: true
+
+- create:
+    - ~/Downloads/Arc
+    - ~/Downloads/Jdownloader
+    - ~/Downloads/Transmission
+    - ~/Downloads/Safari
+    - ~/Downloads/Libby
+    - ~/Downloads/yt-dlp
