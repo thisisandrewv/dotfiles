@@ -13,3 +13,10 @@
     - ~/Downloads/Safari
     - ~/Downloads/Libby
     - ~/Downloads/yt-dlp
+
+- shell:
+    -
+      command: ./setup_homebrew.zsh
+      stdout: true
+      stderr: true
+      
