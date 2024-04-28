@@ -17,45 +17,45 @@ brew install yt-dlp
 brew install ffmpeg
 
 echo "Installing Casks..."
-brew install --cask iterm2
-brew install --cask arc
-brew install --cask displaylink
-brew install --cask dropbox
-brew install --cask 1password
-brew install --cask 1password-cli
-brew install --cask karabiner-elements
-brew install --cask aldente
-brew install --cask cleanshot
-brew install --cask tailscale
-brew install --cask betterdisplay
-brew install --cask battery-buddy
-brew install --cask obsidian
-brew install --cask tidal
-brew install --cask plex
-brew install --cask notion
-brew install --cask appcleaner
-brew install --cask keka
-brew install --cask transmission
-brew install --cask raycast
-brew install --cask raspberry-pi-imager
-brew install --cask malwarebytes
-brew install --cask zoom
-brew install --cask balenaetcher
-brew install --cask unraid-usb-creator
-brew install --cask keyboardcleantool
-brew install --cask pictogram
-brew install --cask lasso
-brew install --cask jdownloader
-brew install --cask android-file-transfer
-brew install --cask firefox
-brew install --cask mist
-brew install --cask oscar
-brew install --cask visual-studio-code
-brew install --cask rekordbox
-brew install --cask crossover
-brew install --cask iina
-brew install --cask parsec
-brew install --cask lulu
+brew install --cask --no-quarantine iterm2
+brew install --cask --no-quarantine arc
+brew install --cask --no-quarantine displaylink
+brew install --cask --no-quarantine dropbox
+brew install --cask --no-quarantine 1password
+brew install --cask --no-quarantine 1password-cli
+brew install --cask --no-quarantine karabiner-elements
+brew install --cask --no-quarantine aldente
+brew install --cask --no-quarantine cleanshot
+brew install --cask --no-quarantine tailscale
+brew install --cask --no-quarantine betterdisplay
+brew install --cask --no-quarantine battery-buddy
+brew install --cask --no-quarantine obsidian
+brew install --cask --no-quarantine tidal
+brew install --cask --no-quarantine plex
+brew install --cask --no-quarantine notion
+brew install --cask --no-quarantine appcleaner
+brew install --cask --no-quarantine keka
+brew install --cask --no-quarantine transmission
+brew install --cask --no-quarantine raycast
+brew install --cask --no-quarantine raspberry-pi-imager
+brew install --cask --no-quarantine malwarebytes
+brew install --cask --no-quarantine zoom
+brew install --cask --no-quarantine balenaetcher
+brew install --cask --no-quarantine unraid-usb-creator
+brew install --cask --no-quarantine keyboardcleantool
+brew install --cask --no-quarantine pictogram
+brew install --cask --no-quarantine lasso
+brew install --cask --no-quarantine jdownloader
+brew install --cask --no-quarantine android-file-transfer
+brew install --cask --no-quarantine firefox
+brew install --cask --no-quarantine mist
+brew install --cask --no-quarantine oscar
+brew install --cask --no-quarantine visual-studio-code
+brew install --cask --no-quarantine rekordbox
+brew install --cask --no-quarantine crossover
+brew install --cask --no-quarantine iina
+brew install --cask --no-quarantine parsec
+brew install --cask --no-quarantine lulu
 
 echo "Installing App Store Apps via MAS..."
 mas install 1452453066 #hidden bar
