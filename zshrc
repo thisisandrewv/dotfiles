@@ -13,6 +13,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 # <<< ZSH Custom Options >>>
 
 # <<< Aliases >>>
+alias burp="brew bundle dump --force --describe"
 alias yt-dl="yt-dlp -S ext:mp4:m4a -P 'Downloads/yt-dlp/'"
 alias hugger='hugo server --noHTTPCache' 
 alias yt-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 --add-metadata --embed-thumbnail -o '%(artist)s - %(title)s.%(ext)s'"
