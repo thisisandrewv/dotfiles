@@ -189,6 +189,11 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Set the icon size of Dock items to 40 pixels
 defaults write com.apple.dock tilesize -int 40
 
+# Modify Launchpad icons layout
+defaults write com.apple.dock springboard-rows -int 7
+defaults write com.apple.dock springboard-columns -int 10
+defaults write com.apple.dock ResetLaunchPad -bool true
+
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 
