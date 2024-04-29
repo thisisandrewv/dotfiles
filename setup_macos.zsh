@@ -108,7 +108,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 ###############################################################################
 
 # Change the desktop wallpaper
-osascript -e 'tell application "Finder" to set desktop picture to "/Users/andrew/dotfiles/wallpaper/wallpaper.jpg" as POSIX file'
+wallpaper set ~/.dotfiles/wallpaper/wallpaper.jpg
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
