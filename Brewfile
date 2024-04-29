@@ -3,6 +3,7 @@ tap "homebrew/bundle"
 tap "teamookla/speedtest"
 
 brew "dockutil"
+brew "fileicon"
 brew "ffmpeg"
 brew "fileicon"
 brew "git"
