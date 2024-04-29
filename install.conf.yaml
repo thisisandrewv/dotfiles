@@ -6,7 +6,10 @@
     ~/.zshrc:
     ~/.zshenv: 
     ~/.gitconfig:
-    ~/.config/1Password/ssh/agent.toml: agent.toml
+    ~/.oh-my-zsh: oh-my-zsh/
+    ~/.config/1Password/ssh/agent.toml: 
+          create: true
+          path: agent.toml
 
 - create:
     - ~/Downloads/Arc
