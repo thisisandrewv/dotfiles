@@ -407,6 +407,36 @@ defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 # Randomize port on launch
 defaults write org.m0k.transmission RandomPort -bool true
 
+###############################################################################
+# Customize App Icons                                                         #
+###############################################################################
+
+fileicon set /Applications/Android File Transfer.app ~/.dotfiles/icons/android-file-transfer.icns
+fileicon set /Applications/Notion.app ~/.dotfiles/icons/notion.icns
+fileicon set /Applications/rekordbox 6/rekordbox.app ~/.dotfiles/icons/rekordbox.icns
+fileicon set /Applications/Karabiner-Elements.app ~/.dotfiles/icons/karabiner.icns
+fileicon set /Applications/OSCAR.app ~/.dotfiles/icons/oscar.icns
+fileicon set /Applications/JDownloader2.app ~/.dotfiles/icons/jdownloader.icns
+fileicon set /Applications/Transmission.app ~/.dotfiles/icons/transmission.icns
+fileicon set /Applications/Tidal.app ~/.dotfiles/icons/music.icns
+fileicon set /Applications/AppCleaner.app ~/.dotfiles/icons/app-cleaner.icns
+fileicon set /Applications/iTerm.app ~/.dotfiles/icons/iterm.icns
+fileicon set /Applications/Plex.app ~/.dotfiles/icons/plex.icns
+
+###############################################################################
+# Change Doc Icons with Dockutil                                              #
+###############################################################################
+
+dockutil --remove all --no-restart
+dockutil --add /System/Applications/Launchpad.app --no-restart
+dockutil --add /System/Applications/Messages.app --no-restart
+dockutil --add /Applications/Arc.app --no-restart
+dockutil --add /Applications/Music.app --no-restart
+dockutil --add /Applications/Notion.app --no-restart
+dockutil --add /Applications/Plex.app --no-restart
+dockutil --add /Applications/iTerm.app --no-restart
+dockutil --add /Applications/Obsidian.app --no-restart
+
 # Prevent script from being run again post initial install
 touch .hasrun
 
