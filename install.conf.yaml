@@ -6,6 +6,7 @@
     ~/.zshrc:
     ~/.zshenv: 
     ~/.gitconfig:
+    ~/.config/1Password/ssh/agent.toml: agent.toml
 
 - create:
     - ~/Downloads/Arc
@@ -16,10 +17,10 @@
     - ~/Downloads/yt-dlp
 
 - shell:
-    -
-      command: ./setup_homebrew.zsh
-      stdout: true
-      stderr: true
+    # -
+    #   command: ./setup_homebrew.zsh
+    #   stdout: true
+    #   stderr: true
     -
       command: test -e .hasrun && echo 'Mac OS Already Configured, Skipping...'  || ./setup_macos.zsh
       quiet: true
