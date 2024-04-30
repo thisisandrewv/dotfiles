@@ -1,9 +1,4 @@
 echo '♬ DUUUNNN in F# ♬'
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # <<< Variables >>>
 export ZSH="$HOME/.oh-my-zsh" #Path to ZSH install
@@ -30,8 +25,7 @@ alias fixclipboard="defaults delete ~/Library/Preferences/com.apple.coreservices
 
 # <<< Other >>>
 # ZSH config stuff
-ZSH_THEME="powerlevel10k/powerlevel10k" #ZSH Theme
 DISABLE_MAGIC_FUNCTIONS="true" #URL pasting fix
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
-source $ZSH/oh-my-zsh.sh
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source $ZSH/oh-my-zsh.shsource /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_THEME="powerlevel10k/powerlevel10k"

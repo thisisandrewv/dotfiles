@@ -1,11 +1,10 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 #  Modified and patched together from a few sources:
 #
 #    https://mths.be/macos
 #    https://github.com/paulirish/dotfiles/blob/master/.osx
 #    https://github.com/kevinSuttle/macOS-Defaults/blob/master/.macos
-
 
 set -e
 
@@ -21,17 +20,12 @@ sudo scutil --set HostName "$COMPUTER_NAME"
 sudo scutil --set LocalHostName "$COMPUTER_NAME"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$COMPUTER_NAME"
 
-# Ask for the administrator password upfront
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until this script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-#!/usr/bin/env bash
-
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -39,9 +33,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
-
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
 
 # Set highlight color to red
 defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.733333 0.721569 Red"
@@ -69,9 +60,6 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-# Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Disable Resume system-wide
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
@@ -168,9 +156,6 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
-
 # Remove Dropbox’s green checkmark icons in Finder
 file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
 [ -e "${file}" ] && mv -f "${file}" "${file}.bak"
@@ -243,13 +228,8 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Spotlight                                                                   #
 ###############################################################################
 
-# Hide Spotlight tray-icon (and subsequent helper)
-sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
-# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
 # Change indexing order and disable some search results
 # Yosemite-specific search results (remove them if you are using macOS 10.9 or older):
@@ -285,9 +265,9 @@ defaults write com.apple.spotlight orderedItems -array \
 # Load new settings before rebuilding the index
 killall mds > /dev/null 2>&1
 # Make sure indexing is enabled for the main volume
-sudo mdutil -i on / > /dev/null
+mdutil -i on / > /dev/null
 # Rebuild the index from scratch
-sudo mdutil -E / > /dev/null
+mdutil -E / > /dev/null
 
 ###############################################################################
 # iTerm 2                                                                     #
@@ -434,15 +414,15 @@ fileicon set /Applications/Plex.app ~/.dotfiles/icons/plex.icns
 # Change Doc Icons with Dockutil                                              #
 ###############################################################################
 
-dockutil --remove all --no-restart
-dockutil --add /System/Applications/Launchpad.app --no-restart
-dockutil --add /System/Applications/Messages.app --no-restart
-dockutil --add /Applications/Arc.app --no-restart
-dockutil --add /Applications/Music.app --no-restart
-dockutil --add /Applications/Notion.app --no-restart
-dockutil --add /Applications/Plex.app --no-restart
-dockutil --add /Applications/iTerm.app --no-restart
-dockutil --add /Applications/Obsidian.app --no-restart
+dockutil --remove all
+dockutil --add /System/Applications/Launchpad.app
+dockutil --add /System/Applications/Messages.app
+dockutil --add /Applications/Arc.app
+dockutil --add /Applications/Music.app
+dockutil --add /Applications/Notion.app
+dockutil --add /Applications/Plex.app
+dockutil --add /Applications/iTerm.app
+dockutil --add /Applications/Obsidian.app
 
 # Prevent script from being run again post initial install
 touch .hasrun
