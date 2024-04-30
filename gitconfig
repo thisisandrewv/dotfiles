@@ -1,6 +1,13 @@
 [user]
 	name = Andrew Vargas
 	email = 79120637+thisisandrewv@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFXnfjycYkAx3EutTqByi5JxmWYDR/G2D5ukvkXgOplH
 [core]
 	editor = nano
 	excludesfile = /Users/thisisandrew/.gitignore_global
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
